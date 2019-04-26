@@ -1,0 +1,17 @@
+var stri = lbl.text!
+        var substring = txtfield.text!
+        var index = ""
+        
+        if (stri.contains("\(substring)")) {
+            print("Found")
+            var range = (stri as NSString).range(of: substring)
+            var attribute = NSMutableAttributedString.init(string: stri)
+            attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.green, range: range)
+            lbl.attributedText = attribute
+        }
+        else
+        {
+            print("Not Found")
+            lbl.textColor = UIColor.black
+        }
+    }
